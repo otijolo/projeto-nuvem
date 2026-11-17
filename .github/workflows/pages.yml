@@ -30,5 +30,8 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist/client
+          name: github-pages-${{ github.run_attempt }}
       - uses: actions/deploy-pages@v4
         id: deploy
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
